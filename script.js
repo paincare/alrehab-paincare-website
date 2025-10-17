@@ -98,6 +98,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // ========================================
     // Form Validation & Submission
     // ========================================
+    // DISABLED: Form now submits directly to Web3Forms
+    // The form will handle submission via action="https://api.web3forms.com/submit"
+    
+    /* COMMENTED OUT - Web3Forms handles submission now
     const appointmentForm = document.getElementById('appointmentForm');
     
     if (appointmentForm) {
@@ -158,6 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 1500);
         });
     }
+    */
     
     // ========================================
     // Notification System
