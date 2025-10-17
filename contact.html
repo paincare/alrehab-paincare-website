@@ -90,7 +90,19 @@
                 </div>
 
                 <div class="contact-form-wrapper">
-                    <form class="contact-form" id="appointmentForm">
+                    <form class="contact-form" id="appointmentForm" action="https://api.web3forms.com/submit" method="POST">
+                        <!-- Web3Forms Access Key - Get yours at https://web3forms.com -->
+                        <input type="hidden" name="access_key" value="fd4c72be-6e4d-49b8-9bfb-4e6be3fadf95">
+                        
+                        <!-- Redirect after submission -->
+                        <input type="hidden" name="redirect" value="https://your-website.vercel.app/thank-you.html">
+                        
+                        <!-- Email subject -->
+                        <input type="hidden" name="subject" value="New Appointment Request - AL-REHAB PAINCARE">
+                        
+                        <!-- From name -->
+                        <input type="hidden" name="from_name" value="AL-REHAB Website">
+                        
                         <h3>Book Your Appointment</h3>
                         <p>Fill out the form and we'll get back to you within 24 hours.</p>
                         
@@ -105,30 +117,38 @@
                         </div>
                         
                         <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com (optional)">
+                        </div>
+                        
+                        <div class="form-group">
                             <label for="issue">What brings you here? *</label>
                             <select id="issue" name="issue" required>
                                 <option value="">Select a condition</option>
-                                <option value="joint-pain">Joint Pain</option>
-                                <option value="back-neck">Back & Neck Pain</option>
-                                <option value="sports-injury">Sports Injury</option>
-                                <option value="post-surgery">Post-Surgery Rehab</option>
-                                <option value="stroke">Stroke Recovery</option>
-                                <option value="arthritis">Arthritis</option>
-                                <option value="neurocare">Neurocare</option>
-                                <option value="home-physio">Home Physiotherapy</option>
-                                <option value="other">Other</option>
+                                <option value="Joint Pain">Joint Pain</option>
+                                <option value="Back & Neck Pain">Back & Neck Pain</option>
+                                <option value="Sports Injury">Sports Injury</option>
+                                <option value="Post-Surgery Rehab">Post-Surgery Rehab</option>
+                                <option value="Stroke Recovery">Stroke Recovery</option>
+                                <option value="Arthritis">Arthritis</option>
+                                <option value="Neurocare">Neurocare</option>
+                                <option value="Home Physiotherapy">Home Physiotherapy</option>
+                                <option value="Other">Other</option>
                             </select>
                         </div>
                         
                         <div class="form-group">
                             <label for="preferred-time">Preferred Time</label>
-                            <input type="text" id="preferred-time" name="preferred-time" placeholder="e.g., Morning, Evening, Weekends">
+                            <input type="text" id="preferred-time" name="preferred_time" placeholder="e.g., Morning, Evening, Weekends">
                         </div>
 
                         <div class="form-group">
                             <label for="message">Additional Information (Optional)</label>
                             <textarea id="message" name="message" rows="3" placeholder="Tell us more about your condition or any specific requirements"></textarea>
                         </div>
+                        
+                        <!-- Honeypot for spam protection -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                         
                         <button type="submit" class="btn btn-primary btn-full">Book Appointment</button>
                         
